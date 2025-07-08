@@ -1,0 +1,9 @@
+CONTENT:
+ linux-headers-6.7.5+_6.7.5-00001-g26d646066d47-1_i386.deb
+ linux-image-6.7.5+_6.7.5-00001-g26d646066d47-1_i386.deb
+ linux-libc-dev_6.7.5-00001-g26d646066d47-1_i386.deb
+DIRECTORIES:
+ boot
+ etc
+ info
+ usr
