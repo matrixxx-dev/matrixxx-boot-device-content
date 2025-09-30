@@ -1,3 +1,8 @@
+---
+defaults: github-markdown
+toc: false
+...
+<!-- *********************************************************************** -->
 # matrixxx-boot-device-content
 - This repository contains a composition of files that are necessary for
   the generation of a boot device for matrixxx (a D.I.Y linux live system)
@@ -17,6 +22,11 @@
 
 #### links:
 - home page of [Syslinux Project][]
+
+********************************************************************************
+> [!NOTE]
+> The markdown files contain a pandoc specific extension: **yaml_metadata_block**.
+> This is not correctly processed by GitHub - this block is displayed as a table
 
 <!-- *********************************************************************** -->
 [Syslinux Project]: https://wiki.syslinux.org

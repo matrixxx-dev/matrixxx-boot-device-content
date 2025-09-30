@@ -1,3 +1,8 @@
-# purpose of the directory
-- to overwrite files from SYSTEM/autostart (specialized for this device)
+---
+defaults: github-markdown
+toc: false
+...
+<!-- *********************************************************************** -->
+#### purpose:
+- overwrite files from SYSTEM/autostart (specialized for this device)
 

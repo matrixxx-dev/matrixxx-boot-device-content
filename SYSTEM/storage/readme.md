@@ -1,3 +1,8 @@
-# purpose of the directory
+---
+defaults: github-markdown
+toc: false
+...
+<!-- *********************************************************************** -->
+#### purpose:
 - mountpoint of a virtual device
 
