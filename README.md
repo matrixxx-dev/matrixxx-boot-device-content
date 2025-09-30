@@ -1,7 +1,7 @@
 ---
 defaults: github-markdown
 toc: false
-...
+---
 <!-- *********************************************************************** -->
 # matrixxx-boot-device-content
 - This repository contains a composition of files that are necessary for

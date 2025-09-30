@@ -1,7 +1,7 @@
 ---
 defaults: github-markdown
 toc: false
-...
+---
 <!-- *********************************************************************** -->
 # matrixxx project
 - a D.I.Y live system based on shell scripts
