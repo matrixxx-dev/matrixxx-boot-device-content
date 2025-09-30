@@ -10,7 +10,7 @@ HOME_DIR="/home/${USER}"
 
 ## INFO-FILE:
 SCRIPTNAME="$(basename "$0")"
-INFO_FILE="/.INFO-autostart.txt"
+INFO_FILE="/.INFO-autostart.md"
 SEPERATOR="## ----------------------------------------------------------- ##"
 
 ## -------------------------------------------------------------------------- ##
@@ -39,7 +39,7 @@ func_choose_script(){ # $script
 start=$(date +%s)
 echo "*** START OF ${SCRIPTNAME}" | sudo tee /dev/kmsg
 func_write_infofile "${SEPERATOR}"
-func_write_infofile "Start of ${SCRIPTNAME}"
+func_write_infofile "# Start of ${SCRIPTNAME}"
 func_write_infofile "- current user: ${USER}"
 func_write_infofile "- current path: ${PWD}"
 func_write_infofile "- current pathenvironment: ${PATH}"

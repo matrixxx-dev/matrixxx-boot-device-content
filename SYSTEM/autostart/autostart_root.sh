@@ -7,12 +7,13 @@ USER_HOME="/home/xxx"
 
 ## INFO-FILE:
 SCRIPTNAME="$(basename "$0")"
-INFO_FILE="/.INFO-autostart.txt"
+INFO_FILE="/.INFO-autostart.md"
 SEPERATOR="## ----------------------------------------------------------- ##"
 
 ## -------------------------------------------------------------------------- ##
 ## FUNCTIONS:
 ## -------------------------------------------------------------------------- ##
+func_init_infofile(){ sudo sh -c "echo -n '' > ${INFO_FILE}"; }
 func_write_infofile(){ sudo sh -c "echo '${1}' >> ${INFO_FILE}"; }
 
 getbootparam_system_dir(){ # parameter
@@ -28,6 +29,7 @@ done
 ## MAIN:
 ## -------------------------------------------------------------------------- ##
 ## INFO-FILE (start):
+func_init_infofile
 start=$(date +%s)
 #echo "*** START OF ${SCRIPTNAME}" | tee /dev/kmsg
 echo "*** START OF ${SCRIPTNAME}" > /dev/kmsg
@@ -64,7 +66,7 @@ fi
 ## -------------------------------------------------------------------------- ##
 func_write_infofile "-- show layer files"
 FILE="${SYSTEM_DIR}/LAYER"
-func_write_infofile "$(ls -la ${FILE}* 2>/dev/null)"
+func_write_infofile "$(ls -la "${FILE}"* 2>/dev/null)"
 #ls -la "${FILE}"* 2>/dev/null
 
 ## -------------------------------------------------------------------------- ##
