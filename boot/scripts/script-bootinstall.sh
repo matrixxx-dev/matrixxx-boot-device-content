@@ -5,6 +5,13 @@
 ## Setup booting from disk (USB, harddrive etc.)
 ##
 ## ########################################################################## ##
+## DISCLAIMER:
+## THIS IS EXPERIMENTAL SOFTWARE. USE AT YOUR OWN RISK. THE AUTHOR
+## CAN NOT BE HELD LIABLE UNDER ANY CIRCUMSTANCES FOR DAMAGE TO HARDWARE OR
+## SOFTWARE, LOST DATA, OR OTHER DIRECT OR INDIRECT DAMAGE RESULTING FROM THE
+## USE OF THIS SOFTWARE.
+## YOU ARE RESPONSIBLE FOR YOUR OWN COMPLIANCE WITH ALL APPLICABLE LAWS.
+## ########################################################################## ##
 ## start script with sudo if necessary:
 [ "$(id -u)" != "0" ] && exec sudo "$0" "$@"
 
