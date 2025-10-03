@@ -51,6 +51,7 @@ toc: false
 [matrixxx-kernel-build]: https://github.com/matrixxx-dev/matrixxx-kernel-build
 
 [readme: about]: SYSTEM/doc/readme-matrixxx.md
+[readme: process]: SYSTEM/doc/readme-process.md
 [readme: usage]: readme-HowTo.md
 
 [Syslinux Project]: https://wiki.syslinux.org
