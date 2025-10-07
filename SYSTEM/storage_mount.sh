@@ -3,16 +3,15 @@
 ## ########################################################################## ##
 ## mount virtual device:
 ## ########################################################################## ##
-NAME="storage"
+MOUNTPOINT_NAME="storage"
+STORAGE_NAME="storage"
 
 ## -------------------------------------------------------------------------- ##
 ## FUNCTIONS
 ## -------------------------------------------------------------------------- ##
-func_mount_image(){ # name="$1"
+func_mount_image(){ # name="$1"; mountpoint_name="$2"
   local name mountpoint image option cmd
-  name="$1"
-  mountpoint="$PWD/${name}"
-  image="$PWD/${name}.img"
+  image="$PWD/$1.img"; mountpoint="$PWD/$2"
 
   ## special handling for QEMU
   ## check on "rw" or "ro"
@@ -33,7 +32,7 @@ func_mount_image(){ # name="$1"
 ## -------------------------------------------------------------------------- ##
 ## MAIN:
 ## -------------------------------------------------------------------------- ##
-func_mount_image "${NAME}"
+func_mount_image "${STORAGE_NAME}" "${MOUNTPOINT_NAME}"
 
 ## -------------------------------------------------------------------------- ##
 ## pause:
