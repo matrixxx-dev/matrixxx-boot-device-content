@@ -73,7 +73,7 @@ func_write_infofile "# Start of ${SCRIPTNAME}"
 ## "Device Type" "Mute Switch" "Volume in %"
 ## - Mute Switch    1|0|toggle
 ## - Volume in %    VOL[%][-/+]
-func_set_audio_device "sink" "0" "75%"
+func_set_audio_device "sink" "0" "100%"
 func_set_audio_device "source" "1" "0%"
 
 ## -------------------------------------------------------------------------- ##

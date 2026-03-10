@@ -4,13 +4,13 @@
 ## mount virtual device:
 ## ########################################################################## ##
 MOUNTPOINT_NAME="storage"
-STORAGE_NAME="storage"
+STORAGE_NAME="storage-common"
 
 ## -------------------------------------------------------------------------- ##
 ## FUNCTIONS
 ## -------------------------------------------------------------------------- ##
-func_mount_image(){ # name="$1"; mountpoint_name="$2"
-  local name mountpoint image option cmd
+func_mount_image(){ # storage_name="$1"; mountpoint_name="$2"
+  local mountpoint image option cmd
   image="$PWD/$1.img"; mountpoint="$PWD/$2"
 
   ## special handling for QEMU
