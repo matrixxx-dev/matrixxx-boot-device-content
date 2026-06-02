@@ -3,21 +3,21 @@
 ## as user:
 ## ########################################################################## ##
 ## audio configuration:
-## PulseAudio: http://pulseaudio.org/
-## PipeWire use pipewire-pulse daemon
-## PipeWire use Session Manager wireplumber
+## PipeWire: home: https://pipewire.org/
+##           wiki: https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home
+##           - PipeWire Command Line Interface - pw-cli
 ##
-## WirePlumber: https://wiki.archlinux.org/title/WirePlumber
-## WirePlumber Control CLI: wpctl
-## - wpctl status
+## WirePlumber: Session-Manager for PipeWire
+##              https://pipewire.pages.freedesktop.org/wireplumber/
+##              https://wiki.archlinux.org/title/WirePlumber
+##              - WirePlumber Control CLI - wpctl
 ##
 ## source: device that can emit digital audio stream to PulseAudio
 ##         (typically microphone, line input, HDMI capture card, ...
 ## sink:   device that can output digital audio stream from PulseAudio
 ##         (typically speaker signal, headphone/line output, HDMI output, ...)
 ##
-## ########################################################################## ##
-## https://github.com/mikeroyal/PipeWire-Guide
+## see also: https://github.com/mikeroyal/PipeWire-Guide
 ## ########################################################################## ##
 SCRIPTNAME="$(basename "$0")"
 INFO_FILE="/.INFO-autostart.md"
@@ -27,6 +27,7 @@ INFO_FILE="/.INFO-autostart.md"
 ## -------------------------------------------------------------------------- ##
 func_write_infofile(){ sudo sh -c "echo '${1}' >> ${INFO_FILE}"; }
 
+## set config for audio devices
 func_set_audio_device(){ # $type $mute_switch $volume
   local type mute_switch volume
   local device_array device alsa_type id
@@ -56,19 +57,10 @@ func_set_audio_device(){ # $type $mute_switch $volume
   done
 }
 
-func_wpctl_status(){
-  wpctl status -k
-  echo "## --------------------------------------------------------------- ##"
-  wpctl status -n
-  echo "## --------------------------------------------------------------- ##"
-}
-
 ## -------------------------------------------------------------------------- ##
 ## MAIN:
 ## -------------------------------------------------------------------------- ##
-func_write_infofile "# Start of ${SCRIPTNAME}"
-
-#func_wpctl_status
+func_write_infofile ""; func_write_infofile "# Start of ${SCRIPTNAME}"
 
 ## "Device Type" "Mute Switch" "Volume in %"
 ## - Mute Switch    1|0|toggle

@@ -63,7 +63,7 @@ func_cmd_process(){ # cmd
 ## -------------------------------------------------------------------------- ##
 ## MAIN:
 ## -------------------------------------------------------------------------- ##
-func_write_infofile "# Start of ${SCRIPTNAME}"
+func_write_infofile ""; func_write_infofile "# Start of ${SCRIPTNAME}"
 func_prozess_xrandr
 
 ## -------------------------------------------------------------------------- ##

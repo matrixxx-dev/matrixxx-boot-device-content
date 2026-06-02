@@ -8,7 +8,7 @@ USER_HOME="/home/xxx"
 ## INFO-FILE:
 SCRIPTNAME="$(basename "$0")"
 INFO_FILE="/.INFO-autostart.md"
-SEPERATOR="## ----------------------------------------------------------- ##"
+SEPERATOR="*****************************************************************"
 
 ## -------------------------------------------------------------------------- ##
 ## FUNCTIONS:
@@ -31,10 +31,10 @@ done
 ## INFO-FILE (start):
 func_init_infofile
 start=$(date +%s)
-#echo "*** START OF ${SCRIPTNAME}" | tee /dev/kmsg
 echo "*** START OF ${SCRIPTNAME}" > /dev/kmsg
+func_write_infofile ""
 func_write_infofile "${SEPERATOR}"
-func_write_infofile "Start of ${SCRIPTNAME}"
+func_write_infofile "# Start of ${SCRIPTNAME}"
 func_write_infofile "- current user: ${USER}"
 func_write_infofile "- current path: ${PWD}"
 func_write_infofile "- command line: $(cat /proc/cmdline)"

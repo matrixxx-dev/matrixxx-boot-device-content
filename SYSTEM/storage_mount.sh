@@ -2,16 +2,20 @@
 
 ## ########################################################################## ##
 ## mount virtual device:
+##
 ## ########################################################################## ##
 MOUNTPOINT_NAME="storage"
 STORAGE_NAME="storage-common"
 
 ## -------------------------------------------------------------------------- ##
-## FUNCTIONS
+## FUNCTIONS:
 ## -------------------------------------------------------------------------- ##
 func_mount_image(){ # storage_name="$1"; mountpoint_name="$2"
   local mountpoint image option cmd
   image="$PWD/$1.img"; mountpoint="$PWD/$2"
+
+  ## Check if there is an image
+  [ -f "${image}" ] || return 1
 
   ## special handling for QEMU
   ## check on "rw" or "ro"

@@ -5,18 +5,19 @@ toc: false
 <!-- *********************************************************************** -->
 ## LAYER definition:
 
-| Link:       | Description:                                      | arch.:     |
-| ----------- | ------------------------------------------------- | ---------- |
-| [LAYER0][]  | Linux Kernel (see ./linux-kernel-*.txt)           | amd64      |
-| [LAYER1][]  | matrixxx                                          | amd64      |
-| [LAYER2][]  | matrixxx 2                                        | amd64      |
-| [LAYER3][]  | matrixxx 3                                        | amd64      |
-| [LAYER4][]  | matrixxx 4 (later expansion)                      | amd64      |
-| [LAYER8][]  | Get-Software-Packages - independent-packages      | amd64      |
-| [LAYER15][] | matrixxx (basic configuration: LXDE, ... )        | both       |
-| [LAYER17][] | matrixxx specific (configuration: init, ...)      | both       |
-| [LAYER19][] | matrixxx (config of specific applications)        | both       |
-| [LAYER64][] | matrixxx (64 bit applications)                    | amd64      |
+| Link:       | Description:                                            | arch.: |
+| ----------- | ------------------------------------------------------- | ------ |
+| [LAYER0][]  | Linux Kernel (see ../boot/syslinux/linux-kernel-*.txt)  | amd64  |
+| [LAYER1][]  | matrixxx OS (necessary)                                 | amd64  |
+| [LAYER2][]  | matrixxx OS                                             | amd64  |
+| [LAYER3][]  | matrixxx OS                                             | amd64  |
+| [LAYER4][]  | matrixxx OS                                             | amd64  |
+| [LAYER5][]  | matrixxx OS                                             | amd64  |
+| [LAYER8][]  | third-party-packages                                    | amd64  |
+| [LAYER15][] | matrixxx (basic configuration: LXDE, ... )              | both   |
+| [LAYER17][] | matrixxx specific (configuration: init, ...)            | both   |
+| [LAYER19][] | matrixxx (config of specific applications)              | both   |
+| [LAYER64][] | matrixxx (64 bit applications)                          | amd64  |
 
 <!-- *********************************************************************** -->
 [LAYER]:    /mnt-layer/LAYER
@@ -25,6 +26,7 @@ toc: false
 [LAYER2]:   /mnt-layer/LAYER2
 [LAYER3]:   /mnt-layer/LAYER3
 [LAYER4]:   /mnt-layer/LAYER4
+[LAYER5]:   /mnt-layer/LAYER5
 [LAYER8]:   /mnt-layer/LAYER8
 [LAYER15]:  /mnt-layer/LAYER15
 [LAYER17]:  /mnt-layer/LAYER17
