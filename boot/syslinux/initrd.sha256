@@ -1,5 +1,0 @@
-# Inital Ram Disk:
-- path: working-matrixxx-1.1.2/main
-- version: v1.1.2_2026-05-01
-- sha256:
-0c7cd224a4a69935e36d79bbcadf69f200cdaccfbca987dca94b81bc5bf500ac  ./initrd.gz
