@@ -36,14 +36,14 @@ toc: false
     - the OS
     - the remaster base
 
-system part     generated with                                          package (latest)                                        device location
---------------- ------------------------------------------------------- ------------------------------------------------------- ---------------
-initramfs file  [github: matrixxx-initrd-build][matrixxx-initrd-build]  [initramfs-package][latest matrixxx-initramfs-package]  /boot/syslinux
-kernel layer    [github: matrixxx-kernel-build][matrixxx-kernel-build]  [kernel_package][latest matrixxx_kernel_package]        /boot/syslinux
-firmware layer                                                          [firmware_package][latest matrixxx_firmware_package]    /boot/syslinux
-OS layer        [github: matrixxx-os-build][matrixxx-os-build]          [OS-package 32bit][latest OS-package 32bit]             /SYSTEM_i386
-                                                                        [OS-package 64bit][latest OS-package 64bit]             /SYSTEM_amd64
-remaster layer  [github: matrixxx-remaster][matrixxx-remaster]          [remaster-package][latest remaster-package]             /SYSTEM
+| system part     | generated with                                          | package (latest)                                        | device location |
+| :---            | :---                                                    | :---                                                    | :---            |
+| initramfs file  | [github: matrixxx-initrd-build][matrixxx-initrd-build]  | [initramfs-package][latest matrixxx-initramfs-package]  | /boot/syslinux  |
+| kernel layer    | [github: matrixxx-kernel-build][matrixxx-kernel-build]  | [kernel_package][latest matrixxx_kernel_package]        | /boot/syslinux  |
+| firmware layer  |                                                         | [firmware_package][latest matrixxx_firmware_package]    | /boot/syslinux  |
+| OS layer        | [github: matrixxx-os-build][matrixxx-os-build]          | [OS-package 32bit][latest OS-package 32bit]             | /SYSTEM_i386    |
+|                 |                                                         | [OS-package 64bit][latest OS-package 64bit]             | /SYSTEM_amd64   |
+| remaster layer  | [github: matrixxx-remaster][matrixxx-remaster]          | [remaster-package][latest remaster-package]             | /SYSTEM         |
 
 ********************************************************************************
 > [!WARNING]
@@ -90,14 +90,14 @@ remaster layer  [github: matrixxx-remaster][matrixxx-remaster]          [remaste
     - Das eigentliche Betriebssystem
     - Die Remaster-Basis
 
-system part     generated with                                          package (latest)                                        device location
---------------- ------------------------------------------------------- ------------------------------------------------------- ---------------
-initramfs file  [github: matrixxx-initrd-build][matrixxx-initrd-build]  [initramfs-package][latest matrixxx-initramfs-package]  /boot/syslinux
-kernel layer    [github: matrixxx-kernel-build][matrixxx-kernel-build]  [kernel_package][latest matrixxx_kernel_package]        /boot/syslinux
-firmware layer                                                          [firmware_package][latest matrixxx_firmware_package]    /boot/syslinux
-OS layer        [github: matrixxx-os-build][matrixxx-os-build]          [OS-package 32bit][latest OS-package 32bit]             /SYSTEM_i386
-                                                                        [OS-package 64bit][latest OS-package 64bit]             /SYSTEM_amd64
-remaster layer  [github: matrixxx-remaster][matrixxx-remaster]          [remaster-package][latest remaster-package]             /SYSTEM
+| system part     | generated with                                          | package (latest)                                        | device location |
+| :---            | :---                                                    | :---                                                    | :---            |
+| initramfs file  | [github: matrixxx-initrd-build][matrixxx-initrd-build]  | [initramfs-package][latest matrixxx-initramfs-package]  | /boot/syslinux  |
+| kernel layer    | [github: matrixxx-kernel-build][matrixxx-kernel-build]  | [kernel_package][latest matrixxx_kernel_package]        | /boot/syslinux  |
+| firmware layer  |                                                         | [firmware_package][latest matrixxx_firmware_package]    | /boot/syslinux  |
+| OS layer        | [github: matrixxx-os-build][matrixxx-os-build]          | [OS-package 32bit][latest OS-package 32bit]             | /SYSTEM_i386    |
+|                 |                                                         | [OS-package 64bit][latest OS-package 64bit]             | /SYSTEM_amd64   |
+| remaster layer  | [github: matrixxx-remaster][matrixxx-remaster]          | [remaster-package][latest remaster-package]             | /SYSTEM         |
 
 ********************************************************************************
 > [!WARNING]
