@@ -19,8 +19,8 @@ toc: false
 3. copy the contents of the "matrixxx-boot-device-content-main" directory
    (contained in the "matrixxx-boot-device-content-main.zip" file) to your
    prepared flash storage device
-4. navigate to the /boot/scripts directory on your flash device and execute
-   ./script-bootinstall.sh (respectively take a look at the content first)
+4. navigate to the `/boot/scripts` directory on your flash device and execute
+   `./script-bootinstall.sh` (respectively take a look at the content first)
     - the script is interactive and allows you to choose whether to execute the
       action or cancel it
     - the script overwrites the boot sector on the drive where it is executed
@@ -71,8 +71,8 @@ toc: false
 3. Kopieren Sie den Inhalt des Verzeichnisses „matrixxx-boot-device-content-main“
    (enthalten in der Datei „matrixxx-boot-device-content-main.zip“) auf Ihr
    vorbereitetes Flash-Speichermedium.
-4. Navigieren Sie auf dem Flash-Speichermedium zum Verzeichnis /boot/scripts
-   und starten Sie ./script-bootinstall.sh (bzw. lesen Sie den Inhalt vorher
+4. Navigieren Sie auf dem Flash-Speichermedium zum Verzeichnis `/boot/scripts`
+   und starten Sie `./script-bootinstall.sh` (bzw. lesen Sie den Inhalt vorher
    durch).
     - Das Skript ist interaktiv und fragt Sie, ob die Aktion ausgeführt oder
       abgebrochen werden soll.
