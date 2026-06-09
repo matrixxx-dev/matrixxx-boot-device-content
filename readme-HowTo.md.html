@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>readme-HowTo</title>
+  <style type="text/css">
+  <!--
+    @media (prefers-color-scheme: dark) {
+      body { color-scheme: dark; --fg: whitesmoke; --bg: #000000F0;
+             --fg-border: whitesmoke; --bg-box: dimgray; --fg-header: orange;
+             --fg-header-small: gray; --bg-shadow: orange;
+             --fg-link: gold; --fg-visited: slategray;
+             --fg-active: darkgray;- --fg-hover: darkgray; } }
+    @media (prefers-color-scheme: light) {
+      body { color-scheme: light; --fg: black; --bg: silver;
+             --fg-border: dimgray; --bg-box: lightgrey; --fg-header: navy;
+             --fg-header-small: gray; --bg-shadow: gray;
+             --fg-link: mediumblue; --fg-visited: darkslategray;
+             --fg-active: darkgray;- --fg-hover: darkgray; } }
+    body { box-sizing: border-box; min-width: 200px; max-width: 980px;
+           box-shadow: 1em .5em var(--bg-shadow);
+           border: 2px solid var(--fg-border); border-radius: 1em;
+           color: var(--fg); background-color: var(--bg);
+           font-size: .8em; margin: 0 auto; padding: .8em; }
+    h1, h2, h3, h4, h5, h6, header { margin-top: 0; margin-bottom: 0; color: var(--fg-header); }
+    h1 { font-size: 1.2em; padding-bottom: .4em; border-bottom: 1px solid var(--fg-border); }
+    h2 { font-size: 1.1em; padding-bottom: .2em; }
+    h3, h4 { font-size: 1.0em; } h4, h5, h6 { color: var(--fg-header-small) }
+    p { margin: 0; padding-left: .8em; }
+    table { margin-left: .8em; } table, th, td { border: thin solid; border-collapse: collapse; padding: 0 .4em; }
+    ul, ol { margin: 0; padding-left: 2em; }
+    pre { background-color: var(--bg-box); border: 1px solid var(--fg-border); margin: .2em 1em; border-radius: 1em; }
+    code { font-family: Courier; padding: .5em; }
+    a { text-decoration: none; } a:link { color: var(--fg-link); } a:visited { color: var(--fg-visited); } a:active, a:hover { color: darkgray;}
+    .col2 { column-count: 2; } .col3 { column-count: 3; } .col4 { column-count: 4; }
+  -->
+  </style>
+  <style> #title-block-header { display: none; } </style>
+  <base target="_blank"/>
+</head>
+
+<body>
+<div class="markdown-body">
+  <h1 id="howto-generate-a-bootable-flash-storage-device">HowTo:
+  Generate a bootable Flash Storage Device</h1>
+  <ul>
+  <li>Prerequisites:
+  <ul>
+  <li>a running Linux system with a formatting and partitioning
+  tool</li>
+  <li>the shell script used here requires the following programs: bash,
+  blockdev, dd, df, e2label resp. fatlabel, lsblk, parted, sleep,
+  uname</li>
+  </ul></li>
+  </ul>
+  <ol type="1">
+  <li>formatting and partitioning the flash memory device (e.g. with
+  <code>GParted</code>)
+  <ul>
+  <li>create (at least) one partition of type <code>msdos</code></li>
+  <li>create a file system of type VFAT or ext4</li>
+  <li>set the owner and the group of the device to <code>1000</code>
+  (main user here <code>xxx</code>)</li>
+  </ul></li>
+  <li>download from <a
+  href="https://github.com/matrixxx-dev/matrixxx-boot-device-content"
+  class="uri">https://github.com/matrixxx-dev/matrixxx-boot-device-content</a>
+  repository the current Code
+  <ul>
+  <li>Green button [&lt;&gt; Code] Download ZIP</li>
+  <li>you get matrixxx-boot-device-content-main.zip</li>
+  </ul></li>
+  <li>copy the contents of the <q>matrixxx-boot-device-content-main</q>
+  directory (contained in the
+  <q>matrixxx-boot-device-content-main.zip</q> file) to your prepared
+  flash storage device</li>
+  <li>navigate to the /boot/scripts directory on your flash device and
+  execute ./script-bootinstall.sh (respectively take a look at the
+  content first)
+  <ul>
+  <li>the script is interactive and allows you to choose whether to
+  execute the action or cancel it</li>
+  <li>the script overwrites the boot sector on the drive where it is
+  executed and installs <code>Syslinux</code></li>
+  <li>The script will tell you which drive it is located on. However,
+  you must decide whether you want to perform the action on that drive
+  or not</li>
+  </ul></li>
+  <li>parts of the operating system which <strong>have to be</strong>
+  added
+  <ul>
+  <li>the initramfs file</li>
+  <li>the kernel and the corresponding kernel layer image as well as the
+  firmware
+  <ul>
+  <li>navigate to the <code>/boot/scripts/.linux-kernel_*</code>
+  directory on the device and execute <code>./script.sh</code> (this
+  <q>activates</q> the corresponding kernel version)</li>
+  </ul></li>
+  <li>the OS</li>
+  <li>the remaster base</li>
+  </ul></li>
+  </ol>
+  <table>
+  <thead>
+  <tr>
+  <th style="text-align: left;">system part</th>
+  <th style="text-align: left;">generated with</th>
+  <th style="text-align: left;">package (latest)</th>
+  <th>device location</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td style="text-align: left;">initramfs file</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-initrd-build">github:
+  matrixxx-initrd-build</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-initrd-build/releases/download/v1.0.0/matrixxx-initramfs-package-1.1.2_2026-05-01.tar.xz">initramfs-package</a></td>
+  <td>/boot/syslinux</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">kernel layer</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-kernel-build">github:
+  matrixxx-kernel-build</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/v1.0.0/matrixxx_kernel_package_v7.0.11.tar.xz">kernel_package</a></td>
+  <td>/boot/syslinux</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">firmware layer</td>
+  <td style="text-align: left;"></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/v1.0.0/matrixxx_firmware_package_forky-20260427.tar.xz">firmware_package</a></td>
+  <td>/boot/syslinux</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">OS layer</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-os-build">github:
+  matrixxx-os-build</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-os-build/releases/download/v1.0.0/matrixxx_OS-package-01-lxde-standard-i386.tar.xz">OS-package
+  32bit</a></td>
+  <td>/SYSTEM_i386</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;"></td>
+  <td style="text-align: left;"></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-os-build/releases/download/v1.0.0/matrixxx_OS-package-01-lxde-standard-amd64.tar.xz">OS-package
+  64bit</a></td>
+  <td>/SYSTEM_amd64</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">remaster layer</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-remaster">github:
+  matrixxx-remaster</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-remaster/releases/download/v1.0.0/matrixxx_remaster-package-01.tar.xz">remaster-package</a></td>
+  <td>/SYSTEM</td>
+  </tr>
+  </tbody>
+  </table>
+  <hr />
+  <blockquote>
+  <p>[!WARNING] <strong>DISCLAIMER:</strong> THIS IS EXPERIMENTAL
+  SOFTWARE. USE AT YOUR OWN RISK. THE AUTHOR CAN NOT BE HELD LIABLE
+  UNDER ANY CIRCUMSTANCES FOR DAMAGE TO HARDWARE OR SOFTWARE, LOST DATA,
+  OR OTHER DIRECT OR INDIRECT DAMAGE RESULTING FROM THE USE OF THIS
+  SOFTWARE. YOU ARE RESPONSIBLE FOR YOUR OWN COMPLIANCE WITH ALL
+  APPLICABLE LAWS.</p>
+  </blockquote>
+  <hr />
+  <h1
+  id="anleitung-erstellen-eines-bootfähigen-flash-speichermediums">Anleitung:
+  Erstellen eines bootfähigen Flash-Speichermediums</h1>
+  <ul>
+  <li>Voraussetzungen:
+  <ul>
+  <li>Ein funktionierendes Linux-System mit einem Formatierungs- und
+  Partitionierungstool</li>
+  <li>Das hier verwendete Shell-Skript benötigt folgende Programme:
+  bash, blockdev, dd, df, e2label bzw. fatlabel, lsblk, parted, sleep,
+  uname</li>
+  </ul></li>
+  </ul>
+  <ol type="1">
+  <li>Formatieren und Partitionieren des Flash-Speichermediums
+  <ul>
+  <li>Erstellen Sie mindestens eine Partition und erzeugen Sie ein
+  Dateisystem des Typs VFAT oder ext4</li>
+  </ul></li>
+  <li>Laden Sie den aktuellen Quellcode aus dem Repository <a
+  href="https://github.com/matrixxx-dev/matrixxx-boot-device-content"
+  class="uri">https://github.com/matrixxx-dev/matrixxx-boot-device-content</a>
+  herunter:
+  <ul>
+  <li>Klicken Sie auf den grünen Button [&lt;&gt; Code] und wählen Sie
+  „Download ZIP“.</li>
+  <li>Sie erhalten die Datei
+  „matrixxx-boot-device-content-main.zip“.</li>
+  </ul></li>
+  <li>Kopieren Sie den Inhalt des Verzeichnisses
+  „matrixxx-boot-device-content-main“ (enthalten in der Datei
+  „matrixxx-boot-device-content-main.zip“) auf Ihr vorbereitetes
+  Flash-Speichermedium.</li>
+  <li>Navigieren Sie auf dem Flash-Speichermedium zum Verzeichnis
+  /boot/scripts und starten Sie ./script-bootinstall.sh (bzw. lesen Sie
+  den Inhalt vorher durch).
+  <ul>
+  <li>Das Skript ist interaktiv und fragt Sie, ob die Aktion ausgeführt
+  oder abgebrochen werden soll.</li>
+  <li>Das Skript überschreibt den Bootsektor des Laufwerks, auf dem es
+  ausgeführt wird, und installiert Syslinux.</li>
+  <li>Das Skript zeigt Ihnen an, auf welchem ​​Laufwerk es sich befindet.
+  Sie müssen jedoch selbst entscheiden, ob die Aktion auf diesem
+  Laufwerk ausgeführt werden soll.</li>
+  </ul></li>
+  <li>Zu installierende Teile des Betriebssystems:
+  <ul>
+  <li>Die <q>initramfs</q> Datei</li>
+  <li>Der Kernel und das zugehörige Kernel-Layer-Image sowie die
+  Firmware
+  <ul>
+  <li>Navigieren Sie auf dem Gerät zum Verzeichnis
+  <code>/boot/scripts/.linux-kernel_*</code> und führen Sie
+  <code>./script.sh</code> aus (dadurch wird die entsprechende
+  Kernelversion <q>aktiviert</q>)</li>
+  </ul></li>
+  <li>Das eigentliche Betriebssystem</li>
+  <li>Die Remaster-Basis</li>
+  </ul></li>
+  </ol>
+  <table>
+  <thead>
+  <tr>
+  <th style="text-align: left;">system part</th>
+  <th style="text-align: left;">generated with</th>
+  <th style="text-align: left;">package (latest)</th>
+  <th>device location</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td style="text-align: left;">initramfs file</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-initrd-build">github:
+  matrixxx-initrd-build</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-initrd-build/releases/download/v1.0.0/matrixxx-initramfs-package-1.1.2_2026-05-01.tar.xz">initramfs-package</a></td>
+  <td>/boot/syslinux</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">kernel layer</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-kernel-build">github:
+  matrixxx-kernel-build</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/v1.0.0/matrixxx_kernel_package_v7.0.11.tar.xz">kernel_package</a></td>
+  <td>/boot/syslinux</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">firmware layer</td>
+  <td style="text-align: left;"></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/v1.0.0/matrixxx_firmware_package_forky-20260427.tar.xz">firmware_package</a></td>
+  <td>/boot/syslinux</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">OS layer</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-os-build">github:
+  matrixxx-os-build</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-os-build/releases/download/v1.0.0/matrixxx_OS-package-01-lxde-standard-i386.tar.xz">OS-package
+  32bit</a></td>
+  <td>/SYSTEM_i386</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;"></td>
+  <td style="text-align: left;"></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-os-build/releases/download/v1.0.0/matrixxx_OS-package-01-lxde-standard-amd64.tar.xz">OS-package
+  64bit</a></td>
+  <td>/SYSTEM_amd64</td>
+  </tr>
+  <tr>
+  <td style="text-align: left;">remaster layer</td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-remaster">github:
+  matrixxx-remaster</a></td>
+  <td style="text-align: left;"><a
+  href="https://github.com/matrixxx-dev/matrixxx-remaster/releases/download/v1.0.0/matrixxx_remaster-package-01.tar.xz">remaster-package</a></td>
+  <td>/SYSTEM</td>
+  </tr>
+  </tbody>
+  </table>
+  <hr />
+  <blockquote>
+  <p>[!WARNING] <strong>DISCLAIMER:</strong> DIES IST EXPERIMENTELLE
+  SOFTWARE. DIE BENUTZUNG ERFOLGT AUF EIGENE GEFAHR. DER AUTOR KANN
+  UNTER KEINEN UMSTÄNDEN HAFTBAR GEMACHT WERDEN FÜR SCHÄDEN AN HARD- UND
+  SOFTWARE, VERLORENE DATEN UND ANDERE DIREKT ODER INDIREKT DURCH DIE
+  BENUTZUNG DER SOFTWARE ENTSTEHENDE SCHÄDEN. FÜR DIE EINHALTUNG
+  GESETZLICHER VORSCHRIFTEN SIND SIE SELBST VERANTWORTLICH.</p>
+  </blockquote>
+</div>
+</body>
+</html>

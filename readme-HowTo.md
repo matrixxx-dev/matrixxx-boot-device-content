@@ -1,5 +1,5 @@
 ---
-defaults: github-markdown
+defaults: standard
 toc: false
 ---
 <!-- *********************************************************************** -->
@@ -29,28 +29,23 @@ toc: false
       decide whether you want to perform the action on that drive or not
 5. parts of the operating system which **have to be** added
     - the initramfs file
-      - generated with [github: matrixxx-initrd-build][matrixxx-initrd-build]
-      - unpack the content of [latest matrixxx-initramfs-package]
-        to `/boot/syslinux` of the device
     - the kernel and the corresponding kernel layer image as well as the firmware
-      - generated with [github: matrixxx-kernel-build][matrixxx-kernel-build]
-      - unpack the content of [latest matrixxx_kernel_package] and
-        [latest matrixxx_firmware_package] to `/boot/syslinux` of the device
-        (note: both are hidden folders)
       - navigate to the `/boot/scripts/.linux-kernel_*` directory on the device
         and execute `./script.sh`
         (this 'activates' the corresponding kernel version)
     - the OS
-      - generated with [github: matrixxx-os-build][matrixxx-os-build])
-      - unpack the content of [latest OS-package 32bit]
-        to `/SYSTEM_i386` of the device
-      - unpack the content of [latest OS-package 64bit]
-        to `/SYSTEM_amd64` of the device
-    - the Remaster base
-      - generated with [github: matrixxx-remaster][matrixxx-remaster])
-      - unpack the content of [latest remaster-package]
-        to `/SYSTEM` of the device
+    - the remaster base
 
+system part     generated with                                          package (latest)                                        device location
+--------------- ------------------------------------------------------- ------------------------------------------------------- ---------------
+initramfs file  [github: matrixxx-initrd-build][matrixxx-initrd-build]  [initramfs-package][latest matrixxx-initramfs-package]  /boot/syslinux
+kernel layer    [github: matrixxx-kernel-build][matrixxx-kernel-build]  [kernel_package][latest matrixxx_kernel_package]        /boot/syslinux
+firmware layer                                                          [firmware_package][latest matrixxx_firmware_package]    /boot/syslinux
+OS layer        [github: matrixxx-os-build][matrixxx-os-build]          [OS-package 32bit][latest OS-package 32bit]             /SYSTEM_i386
+                                                                        [OS-package 64bit][latest OS-package 64bit]             /SYSTEM_amd64
+remaster layer  [github: matrixxx-remaster][matrixxx-remaster]          [remaster-package][latest remaster-package]             /SYSTEM
+
+********************************************************************************
 > [!WARNING]
 > **DISCLAIMER:** THIS IS EXPERIMENTAL SOFTWARE. USE AT YOUR OWN RISK. THE
 > AUTHOR CAN NOT BE HELD LIABLE UNDER ANY CIRCUMSTANCES FOR DAMAGE TO HARDWARE
@@ -86,54 +81,25 @@ toc: false
     - Das Skript zeigt Ihnen an, auf welchem ​​Laufwerk es sich befindet.
       Sie müssen jedoch selbst entscheiden, ob die Aktion auf diesem Laufwerk
       ausgeführt werden soll.
-5. parts of the operating system which **have to be** added
-    - the initramfs file
-      - generated with [github: matrixxx-initrd-build][matrixxx-initrd-build]
-      - unpack the content of [latest matrixxx-initramfs-package]
-        to `/boot/syslinux` of the device
-    - the kernel and the corresponding kernel layer image as well as the firmware
-      - generated with [github: matrixxx-kernel-build][matrixxx-kernel-build]
-      - unpack the content of [latest matrixxx_kernel_package] and
-        [latest matrixxx_firmware_package] to `/boot/syslinux` of the device
-        (note: both are hidden folders)
-      - navigate to the `/boot/scripts/.linux-kernel_*` directory on the device
-        and execute `./script.sh`
-        (this 'activates' the corresponding kernel version)
-    - the OS
-      - generated with [github: matrixxx-os-build][matrixxx-os-build]
-      - unpack the content of [latest OS-package 32bit]
-        to `/SYSTEM_i386` of the device
-      - unpack the content of [latest OS-package 64bit]
-        to `/SYSTEM_amd64` of the device
-    - the Remaster base
-      - generated with [github: matrixxx-remaster][matrixxx-remaster]
-      - unpack the content of [latest remaster-package]
-        to `/SYSTEM` of the device
-
 5. Zu installierende Teile des Betriebssystems:
     - Die 'initramfs' Datei
-      - generiert mit [github: matrixxx-initrd-build][matrixxx-initrd-build]
-      - Entpacken Sie den Inhalt von [latest matrixxx-initramfs-package]
-        nach `/boot/syslinux` des Geräts
     - Der Kernel und das zugehörige Kernel-Layer-Image sowie die Firmware
-      - generiert mit [github: matrixxx-kernel-build][matrixxx-kernel-build]
-      - Entpacken Sie den Inhalt von [latest matrixxx_kernel_package] und von
-        [latest matrixxx_firmware_package] nach `/boot/syslinux` des Geräts
-        (Hinweis: beide Inhalte sind versteckte Ordner).
       - Navigieren Sie auf dem Gerät zum Verzeichnis
         `/boot/scripts/.linux-kernel_*` und führen Sie `./script.sh` aus
         (dadurch wird die entsprechende Kernelversion 'aktiviert')
     - Das eigentliche Betriebssystem
-      - generiert mit [github: matrixxx-os-build][matrixxx-os-build]
-      - Entpacken Sie den Inhalt von [latest OS-package 32bit] nach
-        `/SYSTEM_i386` des Geräts.
-      - Entpacken Sie den Inhalt von [latest OS-package 64bit] nach
-        `/SYSTEM_amd64` des Geräts
     - Die Remaster-Basis
-      - generiert mit [github: matrixxx-remaster][matrixxx-remaster]
-      - Entpacken Sie den Inhalt von [latest remaster-package] nach `/SYSTEM`
-        des Geräts
 
+system part     generated with                                          package (latest)                                        device location
+--------------- ------------------------------------------------------- ------------------------------------------------------- ---------------
+initramfs file  [github: matrixxx-initrd-build][matrixxx-initrd-build]  [initramfs-package][latest matrixxx-initramfs-package]  /boot/syslinux
+kernel layer    [github: matrixxx-kernel-build][matrixxx-kernel-build]  [kernel_package][latest matrixxx_kernel_package]        /boot/syslinux
+firmware layer                                                          [firmware_package][latest matrixxx_firmware_package]    /boot/syslinux
+OS layer        [github: matrixxx-os-build][matrixxx-os-build]          [OS-package 32bit][latest OS-package 32bit]             /SYSTEM_i386
+                                                                        [OS-package 64bit][latest OS-package 64bit]             /SYSTEM_amd64
+remaster layer  [github: matrixxx-remaster][matrixxx-remaster]          [remaster-package][latest remaster-package]             /SYSTEM
+
+********************************************************************************
 > [!WARNING]
 > **DISCLAIMER:** DIES IST EXPERIMENTELLE SOFTWARE. DIE BENUTZUNG ERFOLGT AUF
 > EIGENE GEFAHR. DER AUTOR KANN UNTER KEINEN UMSTÄNDEN HAFTBAR GEMACHT
@@ -147,30 +113,16 @@ toc: false
 https://github.com/matrixxx-dev/matrixxx-initrd-build/releases/download/v1.0.0/matrixxx-initramfs-package-1.1.2_2026-05-01.tar.xz
 [matrixxx-kernel-build]: https://github.com/matrixxx-dev/matrixxx-kernel-build
 [latest matrixxx_kernel_package]:
-https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/v1.0.0/matrixxx_kernel_package_v7.0.9.tar.xz
+https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/v1.0.0/matrixxx_kernel_package_v7.0.11.tar.xz
 [latest matrixxx_firmware_package]:
 https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/v1.0.0/matrixxx_firmware_package_forky-20260427.tar.xz
 [matrixxx-os-build]: https://github.com/matrixxx-dev/matrixxx-os-build
 [latest OS-package 32bit]:
-https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/
+https://github.com/matrixxx-dev/matrixxx-os-build/releases/download/v1.0.0/matrixxx_OS-package-01-lxde-standard-i386.tar.xz
 [latest OS-package 64bit]:
-https://github.com/matrixxx-dev/matrixxx-kernel-build/releases/download/
+https://github.com/matrixxx-dev/matrixxx-os-build/releases/download/v1.0.0/matrixxx_OS-package-01-lxde-standard-amd64.tar.xz
 [matrixxx-remaster]: https://github.com/matrixxx-dev/matrixxx-remaster
 [latest remaster-package]:
-https://github.com/matrixxx-dev/matrixxx-remaster/releases/download/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+https://github.com/matrixxx-dev/matrixxx-remaster/releases/download/v1.0.0/matrixxx_remaster-package-01.tar.xz
 
 
