@@ -23,6 +23,7 @@ toc: false
 #### briefly:
 - see [readme: about][]
 - see [readme: HowTo][]
+- see [readme: configuration scripts][]
 
 #### links:
 - home page of [Syslinux Project][]
@@ -30,6 +31,8 @@ toc: false
 <!-- *********************************************************************** -->
 [readme: about]: SYSTEM/doc/readme-matrixxx.md
 [readme: HowTo]: readme-HowTo.md
+[readme: configuration scripts]:
+SYSTEM/doc/readme-matrixxx-configuration-structure.md
 
 [matrixxx-initrd-build]: https://github.com/matrixxx-dev/matrixxx-initrd-build
 [matrixxx-kernel-build]: https://github.com/matrixxx-dev/matrixxx-kernel-build
