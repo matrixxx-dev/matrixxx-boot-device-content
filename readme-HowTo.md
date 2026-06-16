@@ -45,9 +45,14 @@ toc: false
 |                |                                                        | [OS-package 64bit][latest OS-package 64bit]            | /SYSTEM_amd64   |
 | remaster layer | [github: matrixxx-remaster][matrixxx-remaster]         | [remaster-package][latest remaster-package]            | /SYSTEM         |
 
-- Note: Use the packages from the table to create a "base device"
-  (usually a USB flash drive) that you can use to develop and build
-  your own system
+> [!NOTE]
+> Use the packages from the table to create a "base device"
+> (usually a USB flash drive) that you can use to develop and build
+> your own system.
+> The **default language:** of matrixxx is german - see `syslinux.cfg`,
+> `syslnx32.cfg` und `syslnx64.cfg` -> `lang=de`. If you want to use english
+> as the default, copy the files from `/boot/syslinux/syslinux.conf-uk`
+> to `/boot/syslinux/`
 
 ********************************************************************************
 > [!WARNING]
@@ -56,7 +61,6 @@ toc: false
 > OR SOFTWARE, LOST DATA, OR OTHER DIRECT OR INDIRECT DAMAGE RESULTING FROM THE
 > USE OF THIS SOFTWARE.
 > YOU ARE RESPONSIBLE FOR YOUR OWN COMPLIANCE WITH ALL APPLICABLE LAWS.
-
 
 ********************************************************************************
 # Anleitung: Erstellen eines bootfähigen Flash-Speichermediums
@@ -103,9 +107,14 @@ toc: false
 |                |                                                        | [OS-package 64bit][latest OS-package 64bit]            | /SYSTEM_amd64   |
 | remaster layer | [github: matrixxx-remaster][matrixxx-remaster]         | [remaster-package][latest remaster-package]            | /SYSTEM         |
 
-- Hinweis: Verwenden Sie die Pakete aus der Tabelle, um ein „Basisgerät“
-  (möglichst einen USB-Stick) zu erstellen, mit dem Sie Ihr eigenes
-  System entwickeln und aufbauen können
+> [!NOTE]
+> Verwenden Sie die Pakete aus der Tabelle, um ein „Basisgerät“
+> (möglichst einen USB-Stick) zu erstellen, mit dem Sie Ihr eigenes
+> System entwickeln und aufbauen können
+> Die **Standardsprache** von matrixxx ist Deutsch – siehe `syslinux.cfg`,
+> `syslnx32.cfg` und `syslnx64.cfg` -> `lang=de`
+> Wenn Sie Englisch als Standard verwenden möchten, kopieren Sie die
+> Dateien von `/boot/syslinux/syslinux.conf-uk` nach `/boot/syslinux/`
 
 ********************************************************************************
 > [!WARNING]
