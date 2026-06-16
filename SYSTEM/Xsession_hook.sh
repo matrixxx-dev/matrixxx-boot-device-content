@@ -37,6 +37,8 @@ func_check_desktop(){
   file_list="${file_list} /etc/xdg/autostart/pkcs11-register.desktop"
   file_list="${file_list} /etc/xdg/autostart/baloo_file.desktop"
   file_list="${file_list} /etc/xdg/autostart/org.gnome.DejaDup.Monitor.desktop"
+  file_list="${file_list} /etc/xdg/autostart/xdg-user-dirs-kde.desktop"
+  file_list="${file_list} /etc/xdg/autostart/xdg-user-dirs.desktop"
 
   ## 'thunderbird account & settings', 'chromium' and 'brave-browser'
   ## - remove customizations if the program is not installed at all.
