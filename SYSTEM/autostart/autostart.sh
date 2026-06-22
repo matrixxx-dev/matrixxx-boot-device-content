@@ -48,14 +48,9 @@ func_write_infofile "- script pid: $$"
 func_write_infofile "- script ppid: $PPID"
 
 ## -------------------------------------------------------------------------- ##
-## ## set storage directory
-##   func_write_infofile "-- generate a symlink for storage"
-## if [ -d "${SYSTEM_DIR}"/storage ]; then
-##   func_write_infofile "   (${SYSTEM_DIR}/storage <- ${HOME_DIR}/StorageBox)"
-##   ln -s "${SYSTEM_DIR}"/storage "${HOME_DIR}"/StorageBox
-## else
-##   func_write_infofile "   (${SYSTEM_DIR}/storage does not exist"
-## fi
+## include pandoc link
+func_write_infofile "-- set pandoc link"
+func_choose_script "autostart--pandoc.sh"
 
 ## -------------------------------------------------------------------------- ##
 ## adaptation of the display overlaying
@@ -64,16 +59,6 @@ func_choose_script "autostart--xrandr.sh"
 
 func_write_infofile "current configuration:"
 func_write_infofile "$(xrandr --current)"
-
-## -------------------------------------------------------------------------- ##
-## audio configuration
-#func_write_infofile "-- configuration of 'audio'"
-#func_choose_script "autostart--audio.sh"
-
-## -------------------------------------------------------------------------- ##
-## debugging
-#func_choose_script "autostart--debug.sh"
-
 ## -------------------------------------------------------------------------- ##
 ## INFO-FILE (finish):
 echo "*** END OF ${SCRIPTNAME}" | sudo tee /dev/kmsg
