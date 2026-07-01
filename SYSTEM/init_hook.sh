@@ -120,7 +120,6 @@ func_gen_freeplane_link
 func_configure_java
 
 ## -------------------------------------------------------------------------- ##
-
 init_time_period=$(($(date +%s) - INIT_TIME_START))
 func_logging "- init time period (3) - elapsed time: ${init_time_period} seconds"
 
