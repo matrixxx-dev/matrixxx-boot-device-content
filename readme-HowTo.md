@@ -45,14 +45,23 @@ toc: false
 |                |                                                        | [OS-package 64bit][latest OS-package 64bit]            | /SYSTEM_amd64   |
 | remaster layer | [github: matrixxx-remaster][matrixxx-remaster]         | [remaster-package][latest remaster-package]            | /SYSTEM         |
 
+- Use the packages from the table to create a "base device" (preferably a
+  USB flash drive) that you can use to develop and build your own system.
+  - The `package (latest)` list contains the direct download links to the
+    archives (tar.az) of the respective system components.
+  - The `device location` list shows the directories where the **extracted**
+    system components should be copied.
+  - Next, navigate to the directory `/boot/scripts/.linux-kernel_*`
+    on the device and run `./script.sh`.
+    (This will activate the corresponding kernel version.)
+
 > [!NOTE]
-> Use the packages from the table to create a "base device"
-> (usually a USB flash drive) that you can use to develop and build
-> your own system.
 > The **default language:** of matrixxx is german - see `syslinux.cfg`,
 > `syslnx32.cfg` und `syslnx64.cfg` -> `lang=de`. If you want to use english
 > as the default, copy the files from `/boot/syslinux/syslinux.conf-uk`
 > to `/boot/syslinux/`
+
+The device (USB stick) should now be bootable.
 
 ********************************************************************************
 > [!WARNING]
@@ -92,9 +101,6 @@ toc: false
 5. Zu installierende Teile des Betriebssystems:
     - Die 'initramfs' Datei
     - Der Kernel und das zugehörige Kernel-Layer-Image sowie die Firmware
-      - Navigieren Sie auf dem Gerät zum Verzeichnis
-        `/boot/scripts/.linux-kernel_*` und führen Sie `./script.sh` aus
-        (dadurch wird die entsprechende Kernelversion 'aktiviert')
     - Das eigentliche Betriebssystem
     - Die Remaster-Basis
 
@@ -107,14 +113,24 @@ toc: false
 |                |                                                        | [OS-package 64bit][latest OS-package 64bit]            | /SYSTEM_amd64   |
 | remaster layer | [github: matrixxx-remaster][matrixxx-remaster]         | [remaster-package][latest remaster-package]            | /SYSTEM         |
 
+- Verwenden Sie die Pakete aus der Tabelle, um ein „Basisgerät“
+  (vorzugsweise einen USB-Stick) zu erstellen, mit dem Sie Ihr eigenes System
+  entwickeln und aufbauen können.
+  - Die Liste `package (latest)` enthält die direkten Download-Links zu den
+    Archiven (tar.az) der jeweiligen Systemkomponenten.
+  - Die Liste `device location` zeigt die Verzeichnisse an, in die die
+    **extrahierten** Systemkomponenten kopiert werden sollen.
+  - Navigieren Sie anschließend zum Verzeichnis
+    `/boot/scripts/.linux-kernel_*` auf dem Gerät und führen Sie `./script.sh`
+    aus. (Dadurch wird die entsprechende Kernel-Version aktiviert.)
+
 > [!NOTE]
-> Verwenden Sie die Pakete aus der Tabelle, um ein „Basisgerät“
-> (möglichst einen USB-Stick) zu erstellen, mit dem Sie Ihr eigenes
-> System entwickeln und aufbauen können
 > Die **Standardsprache** von matrixxx ist Deutsch – siehe `syslinux.cfg`,
 > `syslnx32.cfg` und `syslnx64.cfg` -> `lang=de`
 > Wenn Sie Englisch als Standard verwenden möchten, kopieren Sie die
 > Dateien von `/boot/syslinux/syslinux.conf-uk` nach `/boot/syslinux/`
+
+Nun sollte das Gerät (USB Stick) bootbar sein
 
 ********************************************************************************
 > [!WARNING]

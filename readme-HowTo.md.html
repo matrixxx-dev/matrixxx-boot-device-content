@@ -173,16 +173,32 @@
   </tr>
   </tbody>
   </table>
+  <ul>
+  <li>Use the packages from the table to create a <q>base device</q>
+  (preferably a USB flash drive) that you can use to develop and build
+  your own system.
+  <ul>
+  <li>The <code>package (latest)</code> list contains the direct
+  download links to the archives (tar.az) of the respective system
+  components.</li>
+  <li>The <code>device location</code> list shows the directories where
+  the <strong>extracted</strong> system components should be
+  copied.</li>
+  <li>Next, navigate to the directory
+  <code>/boot/scripts/.linux-kernel_*</code> on the device and run
+  <code>./script.sh</code>. (This will activate the corresponding kernel
+  version.)</li>
+  </ul></li>
+  </ul>
   <blockquote>
-  <p>[!NOTE] Use the packages from the table to create a <q>base
-  device</q> (usually a USB flash drive) that you can use to develop and
-  build your own system. The <strong>default language:</strong> of
-  matrixxx is german - see <code>syslinux.cfg</code>,
-  <code>syslnx32.cfg</code> und <code>syslnx64.cfg</code> -&gt;
-  <code>lang=de</code>. If you want to use english as the default, copy
-  the files from <code>/boot/syslinux/syslinux.conf-uk</code> to
+  <p>[!NOTE] The <strong>default language:</strong> of matrixxx is
+  german - see <code>syslinux.cfg</code>, <code>syslnx32.cfg</code> und
+  <code>syslnx64.cfg</code> -&gt; <code>lang=de</code>. If you want to
+  use english as the default, copy the files from
+  <code>/boot/syslinux/syslinux.conf-uk</code> to
   <code>/boot/syslinux/</code></p>
   </blockquote>
+  <p>The device (USB stick) should now be bootable.</p>
   <hr />
   <blockquote>
   <p>[!WARNING] <strong>DISCLAIMER:</strong> THIS IS EXPERIMENTAL
@@ -243,13 +259,7 @@
   <ul>
   <li>Die <q>initramfs</q> Datei</li>
   <li>Der Kernel und das zugehörige Kernel-Layer-Image sowie die
-  Firmware
-  <ul>
-  <li>Navigieren Sie auf dem Gerät zum Verzeichnis
-  <code>/boot/scripts/.linux-kernel_*</code> und führen Sie
-  <code>./script.sh</code> aus (dadurch wird die entsprechende
-  Kernelversion <q>aktiviert</q>)</li>
-  </ul></li>
+  Firmware</li>
   <li>Das eigentliche Betriebssystem</li>
   <li>Die Remaster-Basis</li>
   </ul></li>
@@ -324,17 +334,32 @@
   </tr>
   </tbody>
   </table>
+  <ul>
+  <li>Verwenden Sie die Pakete aus der Tabelle, um ein „Basisgerät“
+  (vorzugsweise einen USB-Stick) zu erstellen, mit dem Sie Ihr eigenes
+  System entwickeln und aufbauen können.
+  <ul>
+  <li>Die Liste <code>package (latest)</code> enthält die direkten
+  Download-Links zu den Archiven (tar.az) der jeweiligen
+  Systemkomponenten.</li>
+  <li>Die Liste <code>device location</code> zeigt die Verzeichnisse an,
+  in die die <strong>extrahierten</strong> Systemkomponenten kopiert
+  werden sollen.</li>
+  <li>Navigieren Sie anschließend zum Verzeichnis
+  <code>/boot/scripts/.linux-kernel_*</code> auf dem Gerät und führen
+  Sie <code>./script.sh</code> aus. (Dadurch wird die entsprechende
+  Kernel-Version aktiviert.)</li>
+  </ul></li>
+  </ul>
   <blockquote>
-  <p>[!NOTE] Verwenden Sie die Pakete aus der Tabelle, um ein
-  „Basisgerät“ (möglichst einen USB-Stick) zu erstellen, mit dem Sie Ihr
-  eigenes System entwickeln und aufbauen können Die
-  <strong>Standardsprache</strong> von matrixxx ist Deutsch – siehe
-  <code>syslinux.cfg</code>, <code>syslnx32.cfg</code> und
-  <code>syslnx64.cfg</code> -&gt; <code>lang=de</code> Wenn Sie Englisch
-  als Standard verwenden möchten, kopieren Sie die Dateien von
+  <p>[!NOTE] Die <strong>Standardsprache</strong> von matrixxx ist
+  Deutsch – siehe <code>syslinux.cfg</code>, <code>syslnx32.cfg</code>
+  und <code>syslnx64.cfg</code> -&gt; <code>lang=de</code> Wenn Sie
+  Englisch als Standard verwenden möchten, kopieren Sie die Dateien von
   <code>/boot/syslinux/syslinux.conf-uk</code> nach
   <code>/boot/syslinux/</code></p>
   </blockquote>
+  <p>Nun sollte das Gerät (USB Stick) bootbar sein</p>
   <hr />
   <blockquote>
   <p>[!WARNING] <strong>DISCLAIMER:</strong> DIES IST EXPERIMENTELLE
