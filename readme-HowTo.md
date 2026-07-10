@@ -30,9 +30,6 @@ toc: false
 5. parts of the operating system which **have to be** added
     - the initramfs file
     - the kernel and the corresponding kernel layer image as well as the firmware
-      - navigate to the `/boot/scripts/.linux-kernel_*` directory on the device
-        and execute `./script.sh`
-        (this 'activates' the corresponding kernel version)
     - the OS
     - the remaster base
 
